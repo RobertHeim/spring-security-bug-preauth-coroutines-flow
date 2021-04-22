@@ -17,7 +17,8 @@ I expect that `deniedService.multipleAsFlow` is not executed, but it is.
 
 ## Run
 
-Please see [FooServiceTest](src/test/kotlin/com/example/demo/FooServiceTest.kt) which contains test for all different
+Please see [FlowService](src/main/kotlin/com/example/demo/FooService.kt) and its test
+[FooServiceTest](src/test/kotlin/com/example/demo/FooServiceTest.kt) which contains test for all different
 Mono/Flux/Flow cases. All succeed, but the one returning `Flow`.
 
 ```
