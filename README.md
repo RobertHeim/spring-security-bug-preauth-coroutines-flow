@@ -38,3 +38,11 @@ Caused by: io.mockk.MockKException: no answer found for: DeniedService(com.examp
 ```
 
 The error complains a missing mock because the `deniedService` was executed, but it should have been denied.
+
+## Workaround
+Changing the implementation to the following makes the `PreAuthorize` throw an `AccessDeniedException` as expected:
+```
+override fun deniedFlowWorkaround(): Flow<String> {
+  return flow { emitAll(deniedService.multipleAsFlow()) }
+}
+```

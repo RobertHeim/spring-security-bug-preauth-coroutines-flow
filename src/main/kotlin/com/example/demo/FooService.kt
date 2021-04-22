@@ -22,4 +22,7 @@ interface FooService {
   @PreAuthorize("denyAll")
   fun deniedFlow(): Flow<String>
 
+  @PreAuthorize("denyAll")
+  fun deniedFlowWorkaround(): Flow<String>
+
 }

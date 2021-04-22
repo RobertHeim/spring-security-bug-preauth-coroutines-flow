@@ -67,4 +67,12 @@ class FooServiceTest {
     }
     verify { deniedService wasNot Called }
   }
+
+  @Test
+  fun `deniedFlowWorkaround throws`() {
+    assertThrows<AccessDeniedException> {
+      fooService.deniedFlowWorkaround().asFlux().blockFirst()
+    }
+    verify { deniedService wasNot Called }
+  }
 }
